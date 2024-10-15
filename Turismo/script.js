@@ -1,6 +1,6 @@
 let count = 0;
 let maxSelections = 0;
-const maxSeats = 30; 
+const maxSeats = 48; 
 
 const counterDisplay = document.getElementById('counter');
 const increaseBtn = document.getElementById('increaseBtn');
@@ -54,10 +54,8 @@ function toggleSeatSelection(seat) {
     }
 }
 
-// Atualiza os assentos disponíveis de acordo com o contador
 function updateSeatSelection() {
     const selectedSeats = document.querySelectorAll('.seat.selected');
-    // Remover seleções extras se o contador diminuir
     if (selectedSeats.length > maxSelections) {
         selectedSeats.forEach((seat, index) => {
             if (index >= maxSelections) {
@@ -67,5 +65,5 @@ function updateSeatSelection() {
     }
 }
 
-// Inicializar os assentos
 generateSeats();
+
